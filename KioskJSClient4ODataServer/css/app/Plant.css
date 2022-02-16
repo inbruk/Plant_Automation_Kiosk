@@ -1,0 +1,27 @@
+.workshop_button_cont_1000 {
+    width: 385px;
+    height: 120px;
+    display: block;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.workshop_button_1000 {
+    width: 360px;
+    height: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 10px;
+    font-size: 22pt;
+}
+
+.workshop_button_2000 {
+    width: 150px;
+    height: 150px;
+    margin: 10px; 
+    font-size:28pt;
+}

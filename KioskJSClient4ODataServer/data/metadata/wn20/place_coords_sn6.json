@@ -1,0 +1,99 @@
+{
+  "Places": [
+    {
+      "Number": "35",
+      "XCoord": "77.5",
+      "YCoord": "51"
+    },
+    {
+      "Number": "36",
+      "XCoord": "56.9",
+      "YCoord": "58.5"
+    },
+    {
+      "Number": "37",
+      "XCoord": "48.5",
+      "YCoord": "58"
+    },
+    {
+      "Number": "38",
+      "XCoord": "69.3",
+      "YCoord": "51.8"
+    },
+    {
+      "Number": "39",
+      "XCoord": "43.8",
+      "YCoord": "58"
+    },
+    {
+      "Number": "40",
+      "XCoord": "41.2",
+      "YCoord": "29"
+    },
+    {
+      "Number": "41",
+      "XCoord": "63.7",
+      "YCoord": "58"
+    },
+    {
+      "Number": "42",
+      "XCoord": "78.7",
+      "YCoord": "58"
+    },
+    {
+      "Number": "43",
+      "XCoord": "43.7",
+      "YCoord": "51"
+    },
+    {
+      "Number": "44",
+      "XCoord": "49",
+      "YCoord": "51"
+    },
+    {
+      "Number": "45",
+      "XCoord": "34.6",
+      "YCoord": "32.5"
+    },
+    {
+      "Number": "46",
+      "XCoord": "13",
+      "YCoord": "35"
+    },
+    {
+      "Number": "47",
+      "XCoord": "30",
+      "YCoord": "34.3"
+    },
+    {
+      "Number": "48",
+      "XCoord": "26",
+      "YCoord": "33.1"
+    },
+    {
+      "Number": "49",
+      "XCoord": "10.5",
+      "YCoord": "39.4"
+    },
+    {
+      "Number": "50",
+      "XCoord": "17.5",
+      "YCoord": "38.3"
+    },
+    {
+      "Number": "51",
+      "XCoord": "71",
+      "YCoord": "37"
+    },
+    {
+      "Number": "52",
+      "XCoord": "78.7",
+      "YCoord": "36"
+    },
+    {
+      "Number": "53",
+      "XCoord": "64.3",
+      "YCoord": "36.5"
+    }
+  ]
+}

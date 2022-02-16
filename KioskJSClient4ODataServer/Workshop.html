@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app/Common.css">
+
+    <script type="text/javascript" src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/app/Config.js"></script>
+    <script type="text/javascript" src="js/app/Common.js"></script>
+    <script type="text/javascript" src="js/app/ODataServiceClient.js"></script>
+    <script type="text/javascript" src="js/app/Workshop.js"></script>
+
+    <title>Калужский турбинный завод. Сообщение о неисправности. Выберите участок.</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1 text-center mbp_free">
+                <button class="btn button-home btn-default active" onclick="common_Redirect2IndexHtml();">
+                    <span>Вернуться <br> на список <br> цехов</span>
+                </button>
+            </div>
+            <div class="col-lg-10 mbp_free">
+                <div class="row text-center mbp_free caption2">
+                    <h4 id="workshopSelectionText" class="text-uppercase"> Вами был выбран цех...</h4>
+                </div>
+                <div class="row text-center mbp_free caption2">
+                    <h4 class="text-uppercase"> выберите нужную зону </h4>
+                </div>
+            </div>
+            <div class="col-lg-1 text-center mbp_free">
+                &nbsp;
+            </div>
+        </div> 
+        <div class="row">
+            <img id="bkgDrawing" class="bkgnd_drawing" />
+            <div id="placeContainer" class="plcContainer"></div>
+            <svg id="brdSites" xmlns="http://www.w3.org/2000/svg"
+                 class="bord_drawing item_dims_1000" viewBox="0 0 100 100" preserveAspectRatio="none" ></svg>            
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        workshop_GetWorkshopNumberFromRequestParameter();
+        workshop_DrawCaption();
+        workshop_DrawBackgroundDrawing();
+        workshop_LoadMachineStatusesFromODataService();
+        workshop_LoadSiteStatusesFromODataService();
+        workshop_LoadPlaceCoordsFromJSONFile();
+        workshop_LoadSiteBordersFromJSONFile();
+        workshop_DrawPlaceStatusesMarkers();
+        workshop_DrawSiteBordersMarkers();
+
+        common_ResetRedirection2IndexHtml();
+    </script>
+</body>
+</html>

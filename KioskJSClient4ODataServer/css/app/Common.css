@@ -1,0 +1,245 @@
+﻿
+.my_container {
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+
+.header_row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.space_row {
+    height:10px;
+}
+
+.mbp_free {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.caption {
+    padding: 0px;
+    padding-top:15px;
+}
+
+.caption2 {
+    padding: 0px;
+}
+
+.caption3 {
+    padding: 0px;
+    height:33px;
+}
+
+.status_normal_work {
+/*    background-color: #10ff10;*/
+    background-color: #10ff10b3;
+    border-color: #10ff10;    
+}
+
+.status_breakage {
+    background-color: #ffff00bf;
+    border-color: #ffff00;
+}
+
+.status_crash {
+    background-color: #ff1010c2;
+    border-color: #ff1010;
+}
+
+.status_conservation {
+    background-color: #aaaaaabf;
+    border-color: #aaaaaa;
+}
+
+/*nikitushkin статусы оборудования для цеха - непрозрачные */
+.status_normal_work_ws{
+/*    background-color: #10ff10;*/
+    background-color: #10ff10;
+    border-color: #10ff10;    
+}
+
+.status_breakage_ws {
+    background-color: #ffff00;
+    border-color: #ffff00;
+}
+
+.status_crash_ws {
+    background-color: #ff1010;
+    border-color: #ff1010;
+}
+
+.status_conservation_ws {
+    background-color: #aaaaaa;
+    border-color: #aaaaaa;
+}
+/*end*/
+.site_place_on_workshop {
+    border-radius: 5px;
+    position: relative;
+    z-index: 300;
+}
+
+.circ_place_on_workshop {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 220;
+}
+
+.circ_critical_place_on_workshop {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #ff1010;
+    border-color: #ff1010;
+    z-index: 180;
+}
+
+.circ_place_on_site {
+/*kolosov
+    height: 20px;
+    width: 20px;
+*/
+/*kolosov*/
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50%;
+    position: absolute;
+    z-index: 220;
+}
+
+.circ_critical_place_on_site {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #ff1010;
+    border-color: #ff1010;
+    z-index: 180;
+}
+
+.polyline_site_on_workshop {
+    position: relative;
+    z-index: 200;
+}
+
+.bkgnd_drawing {
+    /*display: block;*/
+    position: absolute;
+    vertical-align: top;
+    text-align: left;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    z-index: 100;
+}
+
+.item_dims_1000 {
+    width: 1170px;
+    height: 900px;
+}
+
+.plcContainer {
+    position: absolute;
+    vertical-align: top;
+    text-align: left;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    z-index: 200
+}
+
+.bord_drawing {
+    /*display: block;*/
+    position: absolute;
+    vertical-align: top;
+    text-align: left;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    z-index: 300
+}
+
+.bckg_modal {
+    background-color: #fed3c3;
+}
+
+.central {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tarea_message {
+    margin:5px;
+    padding:0px;
+    border:0px;
+    height:20px;
+}
+
+.hide-it {
+    display:none;
+    visibility:hidden;
+}
+
+.caption-right {
+    padding: 5px;
+    padding-top: 5px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.value-left {
+    padding: 0px;
+    padding-top: 5px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.button-area {
+    margin: 0px;
+    border: 0px;
+    padding: 5px;
+    padding-bottom:10px;
+}
+
+.button-bottom {
+    height: 60px; /*nikitushkin 05.03.2019*/
+    width: 260px;
+}
+
+.cross-area {
+    padding: 0px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.button-home {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    padding:0px;
+}
+
+
+/*kolosov*/
+.critical_machine {
+/*    background-color: #10ff10b3; */
+    border-style: solid;
+    border-color: #e6009fd1;
+}
+/*nikitushkin 08.02.2019*/
+.critical_machine_border{
+    border-width: 2px;
+}
+/*nikitushkin 07.08.2019*/
+.site_modal{
+    position: absolute;
+    top: 40px;    
+}

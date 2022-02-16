@@ -1,0 +1,39 @@
+{
+  "Places": [
+    {
+      "Number": "66",
+      "XCoord": "76",
+      "YCoord": "46.5"
+    },
+    {
+      "Number": "67",
+      "XCoord": "77.8",
+      "YCoord": "61"
+    },
+    {
+      "Number": "68",
+      "XCoord": "29.6",
+      "YCoord": "57"
+    },
+    {
+      "Number": "69",
+      "XCoord": "23.7",
+      "YCoord": "57"
+    },
+    {
+      "Number": "70",
+      "XCoord": "35.5",
+      "YCoord": "57.4"
+    },
+    {
+      "Number": "71",
+      "XCoord": "14",
+      "YCoord": "45.9"
+    },
+    {
+      "Number": "72",
+      "XCoord": "10.8",
+      "YCoord": "53"
+    }
+  ]
+}

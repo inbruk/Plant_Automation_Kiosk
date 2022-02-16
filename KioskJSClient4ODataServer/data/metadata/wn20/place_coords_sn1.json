@@ -1,0 +1,19 @@
+{
+  "Places": [
+    {
+      "Number": "1",
+      "XCoord": "90.2",
+      "YCoord": "35.2"
+    },
+    {
+      "Number": "2",
+      "XCoord": "63.2",
+      "YCoord": "38"
+    },
+    {
+      "Number": "3",
+      "XCoord": "84.6",
+      "YCoord": "32.8"
+    }
+  ]
+}

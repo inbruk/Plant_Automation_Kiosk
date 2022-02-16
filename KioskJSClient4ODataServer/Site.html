@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app/Common.css">
+
+    <script type="text/javascript" src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/app/Config.js"></script>
+    <script type="text/javascript" src="js/app/Common.js"></script>
+    <script type="text/javascript" src="js/app/ODataServiceClient.js"></script>
+    <script type="text/javascript" src="js/app/ReqRes_Data.js"></script>
+    <script type="text/javascript" src="js/app/ReqRes_ShowMessageBoxAndFunc.js"></script>
+    <script type="text/javascript" src="js/app/Site.js"></script>
+
+    <title>Калужский турбинный завод. Сообщение о неисправности. Выберите станок.</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1 text-center mbp_free">
+                <button class="btn button-home btn-default active" onclick="common_Redirect2IndexHtml();">
+                    <span>Вернуться <br> на список <br> цехов</span>
+                </button>
+            </div>
+            <div class="col-lg-10 mbp_free">
+                <div class="row text-center mbp_free caption3">
+                    <h5 id="workshopSelectionText" class="text-uppercase"> Вами был выбран цех...</h5>
+                </div>
+                <div class="row text-center mbp_free caption3">
+                    <h5 id="siteSelectionText" class="text-uppercase"> Вами был выбран участок...</h5>
+                </div>
+                <div class="row text-center mbp_free caption3">
+                    <h5 class="text-uppercase"> выберите нужный станок </h5>
+                </div>
+            </div>
+            <div class="col-lg-1 text-center mbp_free">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <img id="bkgDrawing" class="bkgnd_drawing" />
+            <div id="placeContainer" class="plcContainer"></div>
+        </div>
+
+        <!-- Modal Window -->
+        <div id="mwndMessage" role="dialog" class="modal fade site_modal">
+            <div class="modal-dialog">
+                <!-- Modal content -->
+                <div class="modal-content bckg_modal">
+                    <div class="modal-header mbp_free">
+                        <div class="row ">
+                            <div class="col-lg-11 central">
+                                <h4 id="mdlModel" class="modal-title caption">Модель</h4>
+                            </div>
+                            <div class="col-lg-1 central cross-area">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-lg-4 central caption-right">
+                                <span>Название:</span>
+                            </div>
+                            <div class="col-lg-8 central value-left">
+                                <span id="mdlName"></span>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-lg-4 central caption-right">
+                                <span>Дата выпуска:</span>
+                            </div>
+                            <div class="col-lg-8 central value-left">
+                                <span id="mdlDate"></span>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-lg-4 central caption-right">
+                                <span>Инвентарный N:</span>
+                            </div>
+                            <div class="col-lg-8 central value-left">
+                                <span id="mdlInvNumber"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body mbp_free">
+                        <div id="mdlLeanPassPanel" class="row central">
+                            <h3 class="text-uppercase">приложите пропуск к считывателю</h3>
+                        </div>
+                        <div id="mdlMessagePanel" class="row hide-it">
+                            <div class="row mbp_free ">
+                                <div class="col-lg-4 central mbp_free caption-right">
+                                    <span>Табельный N:</span>
+                                </div>
+                                <div class="col-lg-8 central mbp_free value-left">
+                                    <span id="mdlTabNumber"></span>
+                                </div>
+                            </div>
+                            <div class="row mbp_free ">
+                                <div class="col-lg-4 central mbp_free caption-right">
+                                    <span>Направление:</span>
+                                </div>
+                                <div class="col-lg-8 central mbp_free value-left">
+                                    <select id="selDirections" style="width:300px;">
+				    </select>
+                                </div>
+                            </div>
+                            <div class="row mbp_free">
+                                <div class="col-lg-4 central mbp_free caption-right">
+                                    <span>Описание неисправности:</span>
+                                </div>
+                                <div class="col-lg-8 central mbp_free value-left">
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div class="row mbp_free central">
+                                <textarea id="mdlMessageTArea" rows="1" cols="80" class="tarea_message"></textarea>
+                            </div>
+                            <div class="row mbp_free ">
+                                <div class="col-lg-6 central central button-area">
+                                    <button type="button" class="btn btn-warning button-bottom" onclick="site_ClickBreakage();" >
+                                        Сообщить о <BR> незначительном дефекте
+                                    </button>
+                                </div>
+                                <div class="col-lg-6 central central button-area" ;"><!--style="padding-top:15px Nikitushkin 05.03.2019 Delete-->
+                                    <button type="button" class="btn btn-danger button-bottom" onclick="site_ClickCrash();" >
+                                        Сообщить об аварии
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal Window -->
+
+        <!-- Modal Message Window -->
+	<div id="msgBoxWindow" class="modal fade"  tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div id="msgBoxWindowHeader" class="modal-header">
+	        <h3 id="msgBoxWindowTitle" class="modal-title">Modal title</h3>
+	      </div>
+	      <div class="modal-body">
+	        <p id="msgBoxWindowMessage" >Modal body text goes here.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button id="msgBoxWindowCloseButton" type="button" class="btn btn-primary">Закрыть</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+        <!-- Modal Message Window -->
+
+    </div>
+
+    <script type="text/javascript">
+        site_GetWorkshopAndNumberFromRequestParameter();
+        site_LoadAvailableDirections();
+        site_DrawCaption();
+        site_DrawBackgroundDrawing();
+        site_LoadMachineStatusesFromODataService();
+        site_LoadPlaceCoordsFromJSONFile();
+        site_DrawPlaceStatusesMarkers();
+        common_ResetRedirection2IndexHtml();
+    </script>
+</body>
+</html>

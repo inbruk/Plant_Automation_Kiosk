@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/TestServerClient.js"></script>
+
+    <title>Тест доступа к WEB API OData v4 серверу из JavaScript посредством JQuery</title>
+</head>
+
+    <body>
+        <script type="text/javascript">
+
+            var X_XSRF_Token = '';
+
+            $.ajax
+                ({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://localhost:44375/api/XsrfToken/",
+                    "method": "GET",
+                    "headers": {
+                        "Content-Type": "application/json",
+                        "cache-control": "no-cache"
+                    }
+                })
+                .done
+                (
+                    function (jqXHRData) {
+                        X_XSRF_Token = jqXHRData.token;
+                    }
+                )
+                .fail
+                (
+                    function (jqXHRData) {
+                        var str = jqXHRData.statusText + " " + jqXHRData.responseText;
+                        output.innerHTML = str;
+                        console.log(str);
+                    }
+                );
+
+            function DrawWorkshops()
+            {
+                var response = GetWorkshops();
+                if (response == null)
+                    $('#divWorkshop')[0].innerText = "GetWorkshops() error !";
+                else
+                {
+                    var str = "response:" + JSON.stringify(response);
+                    $('#divWorkshop')[0].innerText = str;
+                }
+            }
+
+            function DrawSites() {
+                var response = GetSites(20);
+                if (response == null)
+                    $('#divSite')[0].innerText = "GetSites() error !";
+                else {
+                    var str = "response:" + JSON.stringify(response);
+                    $('#divSite')[0].innerText = str;
+                }
+            }
+
+            function DrawMachineStatuses() {
+                var response = GetMachineStatuses(20, 3);
+                if (response == null)
+                    $('#divMachineStatus')[0].innerText = "GetMachineStatuses() error !";
+                else {
+                    var str = "response:" + JSON.stringify(response);
+                    $('#divMachineStatus')[0].innerText = str;
+                }
+            }
+
+            function DrawMachinePlace() {
+                var response = GetMachinePlace(20, 1, 1);
+                if (response == null)
+                    $('#divMachinePlace')[0].innerText = "GetMachinePlace() error !";
+                else {
+                    var str = "response:" + JSON.stringify(response);
+                    $('#divMachinePlace')[0].innerText = str;
+                }
+            }
+
+            function DrawCrashRequestLog()
+            {
+                var ex2inputMachineInventoryNumberStr = $('#ex2inputMachineInventoryNumber').val();
+                var ex2inputStatusStr = $('#ex2inputStatus').val();
+                var ex2inputKioskNumberStr = $('#ex2inputKioskNumber').val();
+                var ex2inputMessageStr = $('#ex2inputMessage').val();
+                var ex2inputTimeStr = new Date().toUTCString();
+
+                var output = $('#ex2outout')[0];
+
+                var oData =
+                {
+                    MachineInventoryNumber: ex2inputMachineInventoryNumberStr,
+                    NewStatusId: ex2inputStatusStr,
+                    KioskNumber: ex2inputKioskNumberStr,
+                    Message: ex2inputMessageStr,
+                    Time: new Date()
+                };
+
+                var response = PostCrashRequestLog(oData);
+                console.log(" PostCrashRequestLog() see CrashRequestLog table in DB ");
+            }
+
+            function DrawPassLeanLog()
+            {
+                var ex3inputKioskNumberStr = $('#ex3inputKioskNumber').val();
+                var ex3inputPassNumberStr = $('#ex3inputPassNumber').val();
+
+                var output = $('#ex3outout')[0];
+
+                var oData =
+                {
+                    KioskNumber: ex3inputKioskNumberStr,
+                    PassNumber: ex3inputPassNumberStr,
+                    Time: new Date()
+                };
+
+                var response = PostPassLeanLog(oData);                
+                console.log(" PostPassLeanLog() see PassLeanLog table in DB ");
+            }
+
+
+        </script>
+
+        <div>
+
+            <BR>
+            Example 1: GET .../Workshop <BR>
+            <BR>
+            <div id="divWorkshop" style="width:800px;height:100px;overflow-y:scroll;"></div> <BR>
+            <button onclick="DrawWorkshops();">Get all workshops</button><BR>
+            <BR>
+
+            <BR>
+            Example 2: GET .../Sites <BR>
+            <BR>
+            <div id="divSite" style="width:800px;height:100px;overflow-y:scroll;"></div> <BR>
+            <button onclick="DrawSites();">Get sites by workshop number </button><BR>
+            <BR>
+
+            <BR>
+            Example 3: GET .../MachineStatuses <BR>
+            <BR>
+            <div id="divMachineStatus" style="width:800px;height:100px;overflow-y:scroll;"></div> <BR>
+            <button onclick="DrawMachineStatuses();">Get MachineStatuses by wks number and site number</button><BR>
+            <BR>
+
+            <BR>
+            Example 4: GET .../MachinePlace <BR>
+            <BR>
+            <div id="divMachinePlace" style="width:800px;height:100px;overflow-y:scroll;"></div> <BR>
+            <button onclick="DrawMachinePlace();">Get MachinePlace by wks number and site number</button><BR>
+            <BR>
+
+            <BR>
+            Example 5: POST .../CrashRequestLog <BR>
+            <BR>
+            <input id="ex2inputMachineInventoryNumber" type="text" value="10-0781"><BR>
+            <input id="ex2inputStatus" type="text" value="2"><BR>
+            <input id="ex2inputKioskNumber" type="text" value="3"><BR>
+            <input id="ex2inputMessage" type="text" value="test message"><BR>
+            <span id="ex2outout" /><BR>
+            <button onclick="DrawCrashRequestLog();">Send value to crash request log</button><BR>
+            <BR>
+
+            <BR>
+            Example 6: POST .../PassLeanLog<BR>
+            <BR>
+            <input id="ex3inputKioskNumber" type="text" value="3"><BR>
+            <input id="ex3inputPassNumber" type="text" value="128,40000"><BR>
+            <span id="ex3outout" /><BR>
+            <button onclick="DrawPassLeanLog();">Send value to pass lean log</button><BR>
+            <BR>
+
+        </div>
+
+    </body>
+
+</html>

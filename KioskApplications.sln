@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCoreWebApiODataTestServer", "ASPNETCoreWebApiODataTestServer\ASPNETCoreWebApiODataTestServer.csproj", "{5C032E6D-B81F-433B-B38A-D7FCA0D8A5DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckZ2ForProximityCardAndSend2WS", "CheckZ2ForProximityCardAndSend2WS\CheckZ2ForProximityCardAndSend2WS.csproj", "{DD33D2F6-EFDF-4783-9D21-3C17013B7902}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KioskJSClient4ODataServer", "KioskJSClient4ODataServer\KioskJSClient4ODataServer.csproj", "{09010E46-6E57-4E2C-BFB8-79674B46F961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test4ProximityCarRequest", "Test4ProximityCarRequest\Test4ProximityCarRequest.csproj", "{58243D8F-F0CD-42EB-B3E7-99996C2E9464}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestJSClient4TestOData4Service", "TestJSClient4TestOData4Service", "{127BAAE2-BF3E-42D7-88A9-7648E431BBCF}"
+	ProjectSection(SolutionItems) = preProject
+		TestJSClient4TestOData4Service\Index.html = TestJSClient4TestOData4Service\Index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{D986CD18-DB52-4687-8A3D-736BBCE06FA3}"
+	ProjectSection(SolutionItems) = preProject
+		TestJSClient4TestOData4Service\Scripts\jquery-3.3.1.min.js = TestJSClient4TestOData4Service\Scripts\jquery-3.3.1.min.js
+		TestJSClient4TestOData4Service\Scripts\TestServerClient.js = TestJSClient4TestOData4Service\Scripts\TestServerClient.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{2CFCA9BE-7BD8-450D-96AF-4F3FFE524828}"
+	ProjectSection(SolutionItems) = preProject
+		Document\DeploymentChartPic.png = Document\DeploymentChartPic.png
+		Document\Диаграмма_БД.dbd = Document\Диаграмма_БД.dbd
+		Document\Диаграмма_БД.png = Document\Диаграмма_БД.png
+		Document\серверное API и структур данных V3.0.doc = Document\серверное API и структур данных V3.0.doc
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C032E6D-B81F-433B-B38A-D7FCA0D8A5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C032E6D-B81F-433B-B38A-D7FCA0D8A5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C032E6D-B81F-433B-B38A-D7FCA0D8A5DC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C032E6D-B81F-433B-B38A-D7FCA0D8A5DC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DD33D2F6-EFDF-4783-9D21-3C17013B7902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD33D2F6-EFDF-4783-9D21-3C17013B7902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD33D2F6-EFDF-4783-9D21-3C17013B7902}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD33D2F6-EFDF-4783-9D21-3C17013B7902}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{09010E46-6E57-4E2C-BFB8-79674B46F961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09010E46-6E57-4E2C-BFB8-79674B46F961}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{09010E46-6E57-4E2C-BFB8-79674B46F961}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{58243D8F-F0CD-42EB-B3E7-99996C2E9464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58243D8F-F0CD-42EB-B3E7-99996C2E9464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58243D8F-F0CD-42EB-B3E7-99996C2E9464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58243D8F-F0CD-42EB-B3E7-99996C2E9464}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D986CD18-DB52-4687-8A3D-736BBCE06FA3} = {127BAAE2-BF3E-42D7-88A9-7648E431BBCF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DE55236-9344-411D-A58D-A63D30D4702F}
+	EndGlobalSection
+EndGlobal

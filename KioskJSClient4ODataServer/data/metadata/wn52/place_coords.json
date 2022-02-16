@@ -1,0 +1,71 @@
+{
+  "Places": [
+   {
+	  "SiteNumber": "1",
+      "Number": "83",
+      "XCoord": "51.3",
+      "YCoord": "26.1"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "84",
+      "XCoord": "66.5",
+      "YCoord": "46.8"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "85",
+      "XCoord": "31.1",
+      "YCoord": "25.2"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "86",
+      "XCoord": "41.2",
+      "YCoord": "26.2"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "87",
+      "XCoord": "65.5",
+      "YCoord": "57"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "88",
+      "XCoord": "56",
+      "YCoord": "56.7"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "89",
+      "XCoord": "62.8",
+      "YCoord": "25.2"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "90",
+      "XCoord": "30.9",
+      "YCoord": "52.8"
+    },
+    {
+	  "SiteNumber": "1",
+      "Number": "91",
+      "XCoord": "39.7",
+      "YCoord": "54.4"
+    },
+	{
+	  "SiteNumber": "1",
+      "Number": "92",
+      "XCoord": "73.7",
+      "YCoord": "62.9"
+    },
+	{
+	  "SiteNumber": "1",
+      "Number": "93",
+      "XCoord": "91.2",
+      "YCoord": "61.1"
+    }
+
+  ]
+}
